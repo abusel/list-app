@@ -1,14 +1,29 @@
 import LineItem from "./lineItem";
 import { useEffect } from "react";
 
-function LineContainer({ lines, setList, list }) {
+function LineContainer({
+  lines,
+  setList,
+  list,
+  editing,
+  lists,
+  setLists,
+  selectedListId,
+}) {
   useEffect(() => {
-    if (lines[lines.length - 1].text !== "") {
+    if (
+      (!lines[lines.length - 1] && editing) ||
+      (lines[lines.length - 1].text !== "" && editing)
+    ) {
       setList({
         ...list,
         lines: [...list.lines, { text: "", checked: false, crossed: false }],
       });
-    } else if (lines[lines.length - 2] && lines[lines.length - 2].text === "") {
+    } else if (
+      lines[lines.length - 2] &&
+      lines[lines.length - 2].text === "" &&
+      editing
+    ) {
       let linesCopy = [...lines];
       linesCopy.pop();
       setList({
@@ -18,35 +33,21 @@ function LineContainer({ lines, setList, list }) {
     }
   }, [lines]);
 
-  useEffect(() => {
-    if (lines[lines.length - 1].text !== "") {
-      console.log("filled");
-    }
-  }, [lines]);
-
   return (
     <div>
       {lines.map((line) => {
-        return <LineItem line={line} setList={setList} list={list} />;
+        return (
+          <LineItem
+            line={line}
+            setList={setList}
+            list={list}
+            editing={editing}
+            lists={lists}
+            setLists={setLists}
+            selectedListId={selectedListId}
+          />
+        );
       })}
-      {
-        // <div>
-        //   <input type="checkbox" />
-        //   <input
-        //     placeholder="New Item"
-        //     onChange={(e) => {
-        //       setList({
-        //         ...list,
-        //         lines: [
-        //           ...list.lines,
-        //           { text: e.target.value, checked: false, crossed: false },
-        //         ],
-        //       });
-        //     }}
-        //     value=""
-        //   />
-        // </div>
-      }
     </div>
   );
 }

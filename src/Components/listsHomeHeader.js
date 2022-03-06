@@ -1,7 +1,13 @@
-function ListsHomeHeader() {
+function ListsHomeHeader({ setSelectedPage }) {
   return (
     <div>
-      <h1>Lists</h1>
+      <h1
+        onClick={() => {
+          setSelectedPage("create");
+        }}
+      >
+        Lists
+      </h1>
     </div>
   );
 }

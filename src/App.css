@@ -28,6 +28,34 @@
   color: #61dafb;
 }
 
+.editList {
+  /* Spacer */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  position: static;
+  width: 416.75px;
+  height: 32px;
+  left: 116.25px;
+  top: 0px;
+
+  background: #ffffff;
+  /* opacity: 0; */
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 1;
+  margin: 0px 0px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

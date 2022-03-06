@@ -1,16 +1,15 @@
 import ListsHomeHeader from "../Components/listsHomeHeader";
 import ListsContainer from "../Components/listsContainer";
-import { useState } from "react";
 
-function ListsHome() {
-  const [lists, setLists] = useState([
-    { title: "Favorite songs", lines: [] },
-    { title: "Movies", lines: [] },
-  ]);
+function ListsHome({ lists, setSelectedListId, setSelectedPage }) {
   return (
     <div>
-      <ListsHomeHeader />
-      <ListsContainer lists={lists} />
+      <ListsHomeHeader setSelectedPage={setSelectedPage} />
+      <ListsContainer
+        lists={lists}
+        setSelectedListId={setSelectedListId}
+        setSelectedPage={setSelectedPage}
+      />
     </div>
   );
 }
