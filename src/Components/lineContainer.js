@@ -9,6 +9,7 @@ function LineContainer({
   lists,
   setLists,
   selectedListId,
+  reference,
 }) {
   useEffect(() => {
     if (lines.length > 0 || editing) {
@@ -47,6 +48,7 @@ function LineContainer({
             lists={lists}
             setLists={setLists}
             selectedListId={selectedListId}
+            reference={reference}
           />
         );
       })}

@@ -8,6 +8,7 @@ function LineItem({
   lists,
   setLists,
   selectedListId,
+  reference,
 }) {
   let lines = [{ ...list.lines }];
   const [checked, setChecked] = useState(line.checked);
@@ -16,28 +17,14 @@ function LineItem({
   return (
     <div>
       <div style={{ display: "flex" }}>
-        <input
-          type="checkbox"
-          checked={line.checked}
-          onChange={(e) => {
-            setList({
-              ...list,
-              lines: [
-                ...list.lines.slice(0, list.lines.indexOf(line)),
-                { text: line.text, checked: e.target.checked, crossed: false },
-                ...list.lines.slice(list.lines.indexOf(line) + 1),
-              ],
-            });
-            setLists([
-              ...lists.slice(
-                0,
-                lists.indexOf(
-                  lists.find((list) => {
-                    return list.title === selectedListId;
-                  })
-                )
-              ),
-              {
+        <div>
+          <input
+            className="checkbox"
+            type="checkbox"
+            checked={line.checked}
+            tabindex="-1"
+            onChange={(e) => {
+              setList({
                 ...list,
                 lines: [
                   ...list.lines.slice(0, list.lines.indexOf(line)),
@@ -48,19 +35,44 @@ function LineItem({
                   },
                   ...list.lines.slice(list.lines.indexOf(line) + 1),
                 ],
-              },
-              ...lists.slice(
-                lists.indexOf(
-                  lists.find((list) => {
-                    return list.title === selectedListId;
-                  })
-                ) + 1
-              ),
-            ]);
-          }}
-        />
+              });
+              setLists([
+                ...lists.slice(
+                  0,
+                  lists.indexOf(
+                    lists.find((list) => {
+                      return list.title === selectedListId;
+                    })
+                  )
+                ),
+                {
+                  ...list,
+                  lines: [
+                    ...list.lines.slice(0, list.lines.indexOf(line)),
+                    {
+                      text: line.text,
+                      checked: e.target.checked,
+                      crossed: false,
+                    },
+                    ...list.lines.slice(list.lines.indexOf(line) + 1),
+                  ],
+                },
+                ...lists.slice(
+                  lists.indexOf(
+                    lists.find((list) => {
+                      return list.title === selectedListId;
+                    })
+                  ) + 1
+                ),
+              ]);
+            }}
+          />
+        </div>
         {editing ? (
-          <input
+          <textarea
+            ref={reference}
+            rows="2"
+            className="lineItemText"
             placeholder="New Item"
             value={line.text}
             onChange={(e) => {

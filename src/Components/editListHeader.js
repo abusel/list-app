@@ -1,3 +1,6 @@
+import Cancel from "../Assets/Cancel.svg";
+import Done from "../Assets/Done.svg";
+
 function EditListHeader({
   lists,
   list,
@@ -28,14 +31,22 @@ function EditListHeader({
   }
   return (
     <div className="editList">
-      <h4
+      {/* <h4
         onClick={() => {
           setSelectedPage("home");
         }}
       >
         Cancel
-      </h4>
-      <h4 onClick={handleSave}>Done</h4>
+      </h4> */}
+
+      <img
+        src={Cancel}
+        className="filterColor"
+        onClick={() => {
+          setSelectedPage("home");
+        }}
+      />
+      <img src={Done} onClick={handleSave} className="doneButton" />
     </div>
   );
 }

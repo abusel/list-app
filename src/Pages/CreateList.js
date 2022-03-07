@@ -1,6 +1,6 @@
 import LineContainer from "../Components/lineContainer";
 import EditListHeader from "../Components/editListHeader";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import uuid from "react-uuid";
 function CreateList({ lists, setLists, setSelectedPage, selectedListId }) {
   useEffect(() => {
@@ -18,6 +18,9 @@ function CreateList({ lists, setLists, setSelectedPage, selectedListId }) {
   function handleChangeTitle(e) {
     setList({ ...list, title: e.target.value });
   }
+  const reference = useRef();
+  // reference.current && reference.current.focus();
+
   return (
     <div>
       <EditListHeader
@@ -27,17 +30,19 @@ function CreateList({ lists, setLists, setSelectedPage, selectedListId }) {
         setSelectedPage={setSelectedPage}
         selectedListId={selectedListId}
       />
-      <input
+      <textarea
+        className="listTitleInput"
         placeholder="List title"
         autoFocus={true}
         value={list.title}
         onChange={handleChangeTitle}
-      ></input>
+      ></textarea>
       <LineContainer
         lines={list.lines}
         setList={setList}
         list={list}
         editing="true"
+        reference={reference}
       />
     </div>
   );

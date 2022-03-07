@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import LineContainer from "../Components/lineContainer";
+import ViewListHeader from "../Components/viewListHeader";
 
 function ViewList({ lists, setLists, selectedListId, setSelectedPage }) {
   const [list, setList] = useState("");
@@ -15,6 +16,10 @@ function ViewList({ lists, setLists, selectedListId, setSelectedPage }) {
 
   return (
     <div>
+      <ViewListHeader
+        setSelectedPage={setSelectedPage}
+        selectedListId={selectedListId}
+      />
       <h2
         onClick={() => {
           setSelectedPage("home");
