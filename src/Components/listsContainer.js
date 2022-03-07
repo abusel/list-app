@@ -1,15 +1,22 @@
 import ListItem from "./listItem";
 import { useEffect } from "react";
 
-function ListsContainer({ lists, setSelectedListId, setSelectedPage }) {
+function ListsContainer({
+  lists,
+  setSelectedListId,
+  setSelectedPage,
+  setLists,
+}) {
   return (
-    <div>
+    <div className="listContainer">
       {lists.map((list) => {
         return (
           <ListItem
             list={list}
             setSelectedListId={setSelectedListId}
             setSelectedPage={setSelectedPage}
+            lists={lists}
+            setLists={setLists}
           />
         );
       })}

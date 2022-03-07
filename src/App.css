@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600,700&display=swap");
+
 .App {
   text-align: center;
 }
@@ -54,6 +56,111 @@
   align-self: stretch;
   flex-grow: 1;
   margin: 0px 0px;
+}
+.homeHeaderDesktop {
+  border: 1px solid red;
+  /* Type=Lists, Size=Desktop */
+
+  /* Auto layout */
+
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: flex-start; */
+  padding: 0px;
+
+  position: static;
+  height: 96px;
+  left: 20px;
+  top: 136px;
+
+  background: #ffffff;
+
+  /* Inside auto layout */
+
+  /* flex: none; */
+  order: 1;
+  flex-grow: 0;
+  margin: 20px 0px;
+}
+
+.createImage {
+  height: 40px;
+  width: 40px;
+  right: 40px;
+  margin-left: 500px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+  border: 1px solid red;
+  float: right;
+  border-radius: 4px;
+  padding: 8px;
+}
+.avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+  margin-left: 40px;
+  object-fit: cover;
+}
+
+.listHeaderText {
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 39px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  margin-top: 32.5px;
+  margin-bottom: 24.5px;
+  margin-left: 16px;
+}
+.imageDiv {
+  float: right;
+  margin-left: 50%;
+}
+.listItem {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 16px;
+  height: 60px;
+  width: 960px;
+  left: 0px;
+  top: 0px;
+  border-radius: 8px;
+  text-align: left;
+  border: 0.75px solid #ececec;
+  box-sizing: border-box;
+  display: flex;
+}
+.listText {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  margin-left: 16px;
+}
+.listContainer {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toolButton {
+  height: 50px;
+}
+.ellipses {
+  margin-left: 80%;
+  /* width: 16.25px; */
+  /* height: 3.75px; */
+}
+
+.dropDown {
+  border: 0.75px solid #ececec;
+  border-radius: 8px;
 }
 
 @keyframes App-logo-spin {
