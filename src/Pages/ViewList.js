@@ -6,6 +6,12 @@ function ViewList({ lists, setLists, selectedListId, setSelectedPage }) {
   useEffect(() => {
     setList(lists.find((list) => list.title === selectedListId));
   }, [selectedListId]);
+  function handleDelete() {
+    setLists((lists) => {
+      return lists.filter((list) => list.title !== selectedListId);
+    });
+    setSelectedPage("home");
+  }
 
   return (
     <div>
@@ -16,6 +22,15 @@ function ViewList({ lists, setLists, selectedListId, setSelectedPage }) {
       >
         {list.title}
       </h2>
+      <h2
+        onClick={() => {
+          setSelectedPage("create");
+        }}
+      >
+        Edit
+      </h2>
+      <h2 onClick={handleDelete}>Delete</h2>
+
       {list && (
         <LineContainer
           lines={list.lines}

@@ -11,25 +11,27 @@ function LineContainer({
   selectedListId,
 }) {
   useEffect(() => {
-    if (
-      (!lines[lines.length - 1] && editing) ||
-      (lines[lines.length - 1].text !== "" && editing)
-    ) {
-      setList({
-        ...list,
-        lines: [...list.lines, { text: "", checked: false, crossed: false }],
-      });
-    } else if (
-      lines[lines.length - 2] &&
-      lines[lines.length - 2].text === "" &&
-      editing
-    ) {
-      let linesCopy = [...lines];
-      linesCopy.pop();
-      setList({
-        ...list,
-        lines: [...linesCopy],
-      });
+    if (lines.length > 0 || editing) {
+      if (
+        (!lines[lines.length - 1] && editing) ||
+        (lines[lines.length - 1].text !== "" && editing)
+      ) {
+        setList({
+          ...list,
+          lines: [...list.lines, { text: "", checked: false, crossed: false }],
+        });
+      } else if (
+        lines[lines.length - 2] &&
+        lines[lines.length - 2].text === "" &&
+        editing
+      ) {
+        let linesCopy = [...lines];
+        linesCopy.pop();
+        setList({
+          ...list,
+          lines: [...linesCopy],
+        });
+      }
     }
   }, [lines]);
 
