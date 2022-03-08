@@ -81,7 +81,9 @@ function LineItem({
       <div style={{ display: "flex" }}>
         <div>
           <input
-            className={crossed ? "checkcross checkbox" : "checkbox"}
+            className={
+              crossed ? "checkcross checkbox noselect" : "checkbox noselect"
+            }
             type="checkbox"
             checked={line.checked}
             tabindex="-1"
