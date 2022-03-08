@@ -17,9 +17,49 @@ function LineItem({
     handleCross();
   };
 
-  const onClick = (e) => {
-    e.preventDefault();
-    console.log("click is triggered");
+  const onClick = () => {
+    setChecked((checked) => !checked);
+    setList({
+      ...list,
+      lines: [
+        ...list.lines.slice(0, list.lines.indexOf(line)),
+        {
+          text: line.text,
+          checked: !checked,
+          crossed: crossed,
+        },
+        ...list.lines.slice(list.lines.indexOf(line) + 1),
+      ],
+    });
+    setLists([
+      ...lists.slice(
+        0,
+        lists.indexOf(
+          lists.find((list) => {
+            return list.title === selectedListId;
+          })
+        )
+      ),
+      {
+        ...list,
+        lines: [
+          ...list.lines.slice(0, list.lines.indexOf(line)),
+          {
+            text: line.text,
+            checked: !checked,
+            crossed: crossed,
+          },
+          ...list.lines.slice(list.lines.indexOf(line) + 1),
+        ],
+      },
+      ...lists.slice(
+        lists.indexOf(
+          lists.find((list) => {
+            return list.title === selectedListId;
+          })
+        ) + 1
+      ),
+    ]);
   };
 
   const defaultOptions = {
@@ -116,7 +156,7 @@ function LineItem({
                     {
                       text: line.text,
                       checked: e.target.checked,
-                      crossed: false,
+                      crossed: crossed,
                     },
                     ...list.lines.slice(list.lines.indexOf(line) + 1),
                   ],
