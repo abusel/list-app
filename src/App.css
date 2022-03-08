@@ -479,6 +479,7 @@ svg:active path {
   line-height: 25px;
   letter-spacing: -0.005em;
   text-align: left;
+  min-height: 48px;
 }
 
 /* MEdia query line */
