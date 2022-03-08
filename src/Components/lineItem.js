@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import useLongPress from "./useLongPress";
 
 function LineItem({
   line,
@@ -11,15 +12,76 @@ function LineItem({
   reference,
 }) {
   let lines = [{ ...list.lines }];
+
+  const onLongPress = (e) => {
+    handleCross();
+  };
+
+  const onClick = (e) => {
+    e.preventDefault();
+    console.log("click is triggered");
+  };
+
+  const defaultOptions = {
+    shouldPreventDefault: true,
+    delay: 1100,
+  };
+  const longPressEvent = useLongPress(onLongPress, onClick, defaultOptions);
+
   const [checked, setChecked] = useState(line.checked);
+  const [crossed, setCrossed] = useState(line.crossed);
   function handleCheck(e) {}
+  function handleCross(e) {
+    setCrossed((crossed) => !crossed);
+    setList({
+      ...list,
+      lines: [
+        ...list.lines.slice(0, list.lines.indexOf(line)),
+        {
+          text: line.text,
+          checked: line.checked,
+          crossed: !crossed,
+        },
+        ...list.lines.slice(list.lines.indexOf(line) + 1),
+      ],
+    });
+    setLists([
+      ...lists.slice(
+        0,
+        lists.indexOf(
+          lists.find((list) => {
+            return list.title === selectedListId;
+          })
+        )
+      ),
+      {
+        ...list,
+        lines: [
+          ...list.lines.slice(0, list.lines.indexOf(line)),
+          {
+            text: line.text,
+            checked: line.checked,
+            crossed: !crossed,
+          },
+          ...list.lines.slice(list.lines.indexOf(line) + 1),
+        ],
+      },
+      ...lists.slice(
+        lists.indexOf(
+          lists.find((list) => {
+            return list.title === selectedListId;
+          })
+        ) + 1
+      ),
+    ]);
+  }
 
   return (
     <div>
       <div style={{ display: "flex" }}>
         <div>
           <input
-            className="checkbox"
+            className={crossed ? "checkcross checkbox" : "checkbox"}
             type="checkbox"
             checked={line.checked}
             tabindex="-1"
@@ -31,7 +93,7 @@ function LineItem({
                   {
                     text: line.text,
                     checked: e.target.checked,
-                    crossed: false,
+                    crossed: crossed,
                   },
                   ...list.lines.slice(list.lines.indexOf(line) + 1),
                 ],
@@ -72,7 +134,7 @@ function LineItem({
           <textarea
             ref={reference}
             rows="2"
-            className="lineItemText"
+            className={line.crossed ? "lineItemText crossed" : "lineItemText"}
             placeholder="New Item"
             value={line.text}
             onChange={(e) => {
@@ -83,7 +145,7 @@ function LineItem({
                   {
                     text: e.target.value,
                     checked: line.checked,
-                    crossed: false,
+                    crossed: crossed,
                   },
                   ...list.lines.slice(list.lines.indexOf(line) + 1),
                 ],
@@ -91,7 +153,17 @@ function LineItem({
             }}
           />
         ) : (
-          <p> {line.text}</p>
+          <p
+            className={
+              line.crossed
+                ? "viewLineText crossed noselect"
+                : "viewLineText noselect"
+            }
+            {...longPressEvent}
+          >
+            {" "}
+            {line.text}
+          </p>
         )}
       </div>
     </div>

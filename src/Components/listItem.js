@@ -17,24 +17,27 @@ function ListItem({
         setSelectedPage("view");
       }}
     >
-      <p className="listText">{list.title}</p>
-      <img
-        src={EllipsesDefault}
-        className="ellipses"
-        onClick={(e) => {
-          e.stopPropagation();
-          setShowDrop((showDrop) => !showDrop);
-        }}
-      />
-      {showDrop && (
-        <DropDown
-          setSelectedPage={setSelectedPage}
-          setSelectedListId={setSelectedListId}
-          list={list}
-          lists={lists}
-          setLists={setLists}
+      <div className="listItemWrapper">
+        <p className="listText">{list.title}</p>
+        {showDrop && (
+          <DropDown
+            setSelectedPage={setSelectedPage}
+            setSelectedListId={setSelectedListId}
+            list={list}
+            lists={lists}
+            setLists={setLists}
+            setShowDrop={setShowDrop}
+          />
+        )}
+        <img
+          src={EllipsesDefault}
+          className="ellipses"
+          onClick={(e) => {
+            e.stopPropagation();
+            setShowDrop((showDrop) => !showDrop);
+          }}
         />
-      )}
+      </div>
     </div>
   );
 }

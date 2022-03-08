@@ -19,22 +19,10 @@ function ViewList({ lists, setLists, selectedListId, setSelectedPage }) {
       <ViewListHeader
         setSelectedPage={setSelectedPage}
         selectedListId={selectedListId}
+        lists={lists}
+        setLists={setLists}
       />
-      <h2
-        onClick={() => {
-          setSelectedPage("home");
-        }}
-      >
-        {list.title}
-      </h2>
-      <h2
-        onClick={() => {
-          setSelectedPage("create");
-        }}
-      >
-        Edit
-      </h2>
-      <h2 onClick={handleDelete}>Delete</h2>
+      <h2 className="listTitleView">{list.title}</h2>
 
       {list && (
         <LineContainer
