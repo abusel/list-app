@@ -23,8 +23,9 @@ function ViewList({ lists, setLists, selectedListId, setSelectedPage }) {
           lists={lists}
           setLists={setLists}
         />
-        <h2 className="listTitleView">{list.title}</h2>
-
+        <div className="viewListMiddleContainer">
+          <h2 className="listTitleView">{list.title}</h2>
+        </div>
         {list && (
           <LineContainer
             lines={list.lines}

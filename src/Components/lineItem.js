@@ -195,17 +195,19 @@ function LineItem({
             }}
           />
         ) : (
-          <p
-            className={
-              line.crossed
-                ? "viewLineText crossed noselect"
-                : "viewLineText noselect"
-            }
-            {...longPressEvent}
-          >
-            {" "}
-            {line.text}
-          </p>
+          <div className="viewLineTextContainer">
+            <p
+              className={
+                line.crossed
+                  ? "viewLineText crossed noselect"
+                  : "viewLineText noselect"
+              }
+              {...longPressEvent}
+            >
+              {" "}
+              {line.text}
+            </p>
+          </div>
         )}
       </div>
     </>
