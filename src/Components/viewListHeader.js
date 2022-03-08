@@ -5,7 +5,7 @@ import DropDown from "./dropDown.js";
 
 function ViewListHeader({ setSelectedPage, selectedListId, lists, setLists }) {
   const [showDrop, setShowDrop] = useState(false);
-  let list = lists.find((list) => list.title === selectedListId);
+  let list = lists.find((list) => list.id === selectedListId);
   return (
     <div className="viewListHeader">
       <img

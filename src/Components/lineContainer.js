@@ -37,7 +37,7 @@ function LineContainer({
   }, [lines]);
 
   return (
-    <div>
+    <>
       {lines.map((line) => {
         return (
           <LineItem
@@ -52,7 +52,7 @@ function LineContainer({
           />
         );
       })}
-    </div>
+    </>
   );
 }
 export default LineContainer;

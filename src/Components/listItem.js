@@ -13,12 +13,16 @@ function ListItem({
     <div
       className="listItem"
       onClick={() => {
-        setSelectedListId(list.title);
+        setSelectedListId(list.id);
         setSelectedPage("view");
       }}
     >
       <div className="listItemWrapper">
-        <p className="listText">{list.title}</p>
+        <p className="listText">
+          {list.title.length > 23
+            ? list.title.substring(0, 23) + "..."
+            : list.title}
+        </p>
         {showDrop && (
           <DropDown
             setSelectedPage={setSelectedPage}

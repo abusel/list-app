@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500,600,700&display=swap");
 
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -131,65 +133,65 @@
     margin-bottom: 18px;
     margin-left: 16px;
   }
-  .checkbox {
+  /* .checkbox {
     margin-left: 24px;
     height: 25px;
     width: 25px;
     appearance: none;
     border: 1px solid #b4b4b4;
     border-radius: 4px;
-  }
+  } */
 
   .checkbox:checked {
     border: none;
     background-image: url("./Assets/Checkbox.svg");
   }
 
-  .editList {
-    /* border: 1px solid red; */
-    /* Type=Lists, Size=Desktop */
+  /* .editList { */
+  /* border: 1px solid red; */
+  /* Type=Lists, Size=Desktop */
 
-    /* Auto layout */
+  /* Auto layout */
 
-    display: flex;
-    /* flex-direction: column; */
-    /* align-items: flex-start; */
-    padding: 0px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: flex-start; */
+  /* padding: 0px; */
 
-    position: static;
+  /* position: static;
     height: 96px;
     left: 20px;
     top: 136px;
 
-    background: #ffffff;
+    background: #ffffff; */
 
-    /* Inside auto layout */
+  /* Inside auto layout */
 
-    /* flex: none; */
-    order: 1;
+  /* flex: none; */
+  /* order: 1;
     flex-grow: 0;
     margin: 20px 0px;
-  }
+  } */
 
-  .filterColor {
+  /* .filterColor {
     filter: invert(33%) sepia(0%) saturate(6%) hue-rotate(151deg)
       brightness(86%) contrast(87%);
     width: 61px;
     height: 22px;
-    left: 15.25px;
-    /* identical to box height */
+    left: 15.25px; */
+  /* identical to box height */
 
-    letter-spacing: -0.005em;
+  /* letter-spacing: -0.005em; */
 
-    /* Dark Gray */
+  /* Dark Gray */
 
-    color: #505050;
+  /* color: #505050;
     padding-top: 5px;
     padding-bottom: 5px;
     margin-top: 32px;
     margin-bottom: 24px;
     margin-left: 24px;
-  }
+  } */
 
   .imageDiv {
     float: right;
@@ -243,9 +245,10 @@
     text-align: left;
     outline: none;
     position: relative;
+    width: 99%;
   }
 
-  .doneButton {
+  /* .doneButton {
     height: 18px;
     width: 46px;
     color: #505050;
@@ -256,8 +259,8 @@
     margin-top: 32px;
     margin-bottom: 24px;
     margin-left: 50%;
-  }
-  .lineItemText {
+  } */
+  /* .lineItemText {
     font-family: "Inter", sans-serif;
     font-size: 18px;
     font-style: normal;
@@ -274,46 +277,46 @@
     margin-left: 16px;
     width: 919px;
     height: auto;
-  }
-  .checkbox {
+  } */
+  /* .checkbox {
     margin-left: 24px;
     height: 25px;
     width: 25px;
     appearance: none;
     border: 1px solid #b4b4b4;
     border-radius: 4px;
-  }
+  } */
 
   .checkbox:checked {
     border: none;
     background-image: url("./Assets/Checkbox.svg");
   }
   /* view list page */
-  .viewListHeader {
-    /* border: 1px solid red; */
-    /* Type=Lists, Size=Desktop */
+  /* .viewListHeader { */
+  /* border: 1px solid red; */
+  /* Type=Lists, Size=Desktop */
 
-    /* Auto layout */
+  /* Auto layout */
 
-    display: flex;
-    /* flex-direction: column; */
-    /* align-items: flex-start; */
-    padding: 0px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: flex-start; */
+  /* padding: 0px;
 
     position: static;
     height: 96px;
     left: 20px;
     top: 136px;
 
-    background: #ffffff;
+    background: #ffffff; */
 
-    /* Inside auto layout */
+  /* Inside auto layout */
 
-    /* flex: none; */
-    order: 1;
+  /* flex: none; */
+  /* order: 1;
     flex-grow: 0;
-    margin: 0px 20px;
-  }
+    margin: 0px 20px; */
+  /* } */
   .backButton {
     width: 61px;
     height: 22px;
@@ -328,14 +331,13 @@
     /* padding-top: 5px;
     padding-bottom: 5px; */
     position: absolute;
-    left: 24px;
-    top: 45px;
+
     /* margin-top: 32px;
     margin-bottom: 24px;
     margin-left: 24px; */
   }
 
-  .listTitleView {
+  /* .listTitleView {
     font-family: "Inter", sans-serif;
     font-size: 28px;
     font-style: normal;
@@ -344,7 +346,7 @@
     letter-spacing: -0.01em;
     text-align: left;
     margin-left: 24px;
-  }
+  } */
 
   .viewLineText {
     font-family: "Inter", sans-serif;
@@ -363,58 +365,152 @@
   }
 }
 
+/* Overall */
+.createListContainer,
+.viewListContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.createListInnerContainer,
+.viewListInnerContainer {
+  width: 95%;
+  height: 100%;
+}
+
+.editList,
+.viewListHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 96px;
+}
+
+.editList .filterColor {
+  /* filter: invert(33%) sepia(0%) saturate(6%) hue-rotate(151deg) brightness(86%)
+    contrast(87%); */
+
+  height: 22px;
+}
+svg:active path {
+  /* filter: invert(33%) sepia(0%) saturate(6%) hue-rotate(151deg) brightness(86%)
+    contrast(87%); */
+  fill: red !important;
+  cursor: pointer;
+}
+
+.editList .doneButton,
+.ellipses-view {
+  /* filter: invert(33%) sepia(0%) saturate(6%) hue-rotate(151deg) brightness(86%)
+    contrast(87%); */
+  height: 16px;
+}
+
+.createListItem {
+  display: flex;
+  gap: 1%;
+  margin: 10px 0 0 0;
+}
+
+.createListItemCheckBox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 1%;
+  min-width: 25px;
+}
+
+.checkbox {
+  height: 25px;
+  width: 25px;
+  appearance: none;
+  border: 1px solid #b4b4b4;
+  border-radius: 4px;
+}
+
+.lineItemText {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: -0.005em;
+  text-align: left;
+  caret-color: #2fe6ff;
+  outline: none;
+  border-style: none;
+  border-color: Transparent;
+  overflow: hidden;
+  resize: none;
+  width: 99%;
+  height: auto;
+}
+
+.listTitleView {
+  font-family: "Inter", sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
 /* MEdia query line */
 @media (min-width: 1040px) {
-  .ellipses-view {
+  /* .ellipses-view {
     position: absolute;
     right: 40px;
     top: 32px;
-  }
-  .editList {
-    /* border: 1px solid red; */
-    /* Type=Lists, Size=Desktop */
+  } */
+  /* .editList { */
+  /* border: 1px solid red; */
+  /* Type=Lists, Size=Desktop */
 
-    /* Auto layout */
+  /* Auto layout */
 
-    display: flex;
-    /* flex-direction: column; */
-    /* align-items: flex-start; */
-    padding: 0px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: flex-start; */
+  /* padding: 0px; */
 
-    position: static;
+  /* position: static;
     height: 96px;
     left: 20px;
     top: 136px;
 
-    background: #ffffff;
+    background: #ffffff; */
 
-    /* Inside auto layout */
+  /* Inside auto layout */
 
-    /* flex: none; */
-    order: 1;
+  /* flex: none; */
+  /* order: 1;
     flex-grow: 0;
-    margin: 20px 0px;
-  }
+    margin: 20px 0px; */
+  /* } */
 
-  .filterColor {
+  /* .filterColor {
     filter: invert(33%) sepia(0%) saturate(6%) hue-rotate(151deg)
       brightness(86%) contrast(87%);
     width: 61px;
     height: 22px;
-    left: 15.25px;
-    /* identical to box height */
+    left: 15.25px; */
+  /* identical to box height */
 
-    letter-spacing: -0.005em;
+  /* letter-spacing: -0.005em; */
 
-    /* Dark Gray */
+  /* Dark Gray */
 
-    color: #505050;
+  /* color: #505050;
     padding-top: 5px;
     padding-bottom: 5px;
     margin-top: 32px;
     margin-bottom: 24px;
     margin-left: 24px;
-  }
+  } */
   .homeHeaderDesktop {
     /* border: 1px solid red; */
     /* Type=Lists, Size=Desktop */
@@ -548,9 +644,10 @@
     overflow: hidden;
     text-align: left;
     outline: none;
+    width: 99%;
   }
 
-  .doneButton {
+  /* .doneButton {
     height: 18px;
     width: 46px;
     color: #505050;
@@ -561,8 +658,8 @@
     margin-top: 32px;
     margin-bottom: 24px;
     margin-left: 85%;
-  }
-  .lineItemText {
+  } */
+  /* .lineItemText {
     font-family: "Inter", sans-serif;
     font-size: 18px;
     font-style: normal;
@@ -579,27 +676,27 @@
     margin-left: 16px;
     width: 919px;
     height: auto;
-  }
-  .checkbox {
+  } */
+  /* .checkbox {
     margin-left: 24px;
     height: 25px;
     width: 25px;
     appearance: none;
     border: 1px solid #b4b4b4;
     border-radius: 4px;
-  }
+  } */
 
   .checkbox:checked {
     border: none;
     background-image: url("./Assets/Checkbox.svg");
   }
   /* view list page */
-  .viewListHeader {
-    /* Type=Lists, Size=Desktop */
+  /* .viewListHeader { */
+  /* Type=Lists, Size=Desktop */
 
-    /* Auto layout */
+  /* Auto layout */
 
-    display: flex;
+  /* display: flex;
 
     padding: 0px;
 
@@ -608,15 +705,15 @@
     left: 20px;
     top: 136px;
 
-    background: #ffffff;
+    background: #ffffff; */
 
-    /* Inside auto layout */
+  /* Inside auto layout */
 
-    /* flex: none; */
-    order: 1;
+  /* flex: none; */
+  /* order: 1;
     flex-grow: 0;
     margin: 0px;
-  }
+  } */
   .backButton {
     width: 61px;
     height: 22px;
@@ -628,14 +725,9 @@
     /* Dark Gray */
 
     color: #505050;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-top: 32px;
-    margin-bottom: 24px;
-    margin-left: 24px;
   }
 
-  .listTitleView {
+  /* .listTitleView {
     font-family: "Inter", sans-serif;
     font-size: 28px;
     font-style: normal;
@@ -644,7 +736,7 @@
     letter-spacing: -0.01em;
     text-align: left;
     margin-left: 40px;
-  }
+  } */
 
   .viewLineText {
     font-family: "Inter", sans-serif;

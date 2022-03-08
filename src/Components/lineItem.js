@@ -36,7 +36,7 @@ function LineItem({
         0,
         lists.indexOf(
           lists.find((list) => {
-            return list.title === selectedListId;
+            return list.id === selectedListId;
           })
         )
       ),
@@ -55,7 +55,7 @@ function LineItem({
       ...lists.slice(
         lists.indexOf(
           lists.find((list) => {
-            return list.title === selectedListId;
+            return list.id === selectedListId;
           })
         ) + 1
       ),
@@ -90,7 +90,7 @@ function LineItem({
         0,
         lists.indexOf(
           lists.find((list) => {
-            return list.title === selectedListId;
+            return list.id === selectedListId;
           })
         )
       ),
@@ -109,7 +109,7 @@ function LineItem({
       ...lists.slice(
         lists.indexOf(
           lists.find((list) => {
-            return list.title === selectedListId;
+            return list.id === selectedListId;
           })
         ) + 1
       ),
@@ -117,9 +117,9 @@ function LineItem({
   }
 
   return (
-    <div>
-      <div style={{ display: "flex" }}>
-        <div>
+    <>
+      <div className="createListItem">
+        <div className="createListItemCheckBox">
           <input
             className={
               crossed ? "checkcross checkbox noselect" : "checkbox noselect"
@@ -145,7 +145,7 @@ function LineItem({
                   0,
                   lists.indexOf(
                     lists.find((list) => {
-                      return list.title === selectedListId;
+                      return list.id === selectedListId;
                     })
                   )
                 ),
@@ -164,7 +164,7 @@ function LineItem({
                 ...lists.slice(
                   lists.indexOf(
                     lists.find((list) => {
-                      return list.title === selectedListId;
+                      return list.id === selectedListId;
                     })
                   ) + 1
                 ),
@@ -208,7 +208,7 @@ function LineItem({
           </p>
         )}
       </div>
-    </div>
+    </>
   );
 }
 export default LineItem;

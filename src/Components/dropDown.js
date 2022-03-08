@@ -12,7 +12,7 @@ function DropDown({
   function handleDelete(e) {
     e.stopPropagation();
     setLists((lists) => {
-      return lists.filter((listOne) => listOne.title !== list.title);
+      return lists.filter((listOne) => listOne.id !== list.id);
     });
     setSelectedPage("home");
     setShowDrop && setShowDrop(false);
@@ -24,9 +24,8 @@ function DropDown({
         className="toolButton"
         onClick={(e) => {
           e.stopPropagation();
-          setSelectedListId && setSelectedListId(list.title);
+          setSelectedListId && setSelectedListId(list.id);
           setSelectedPage("create");
-          console.log("hi");
         }}
       />
       <img src={DeleteDefault} onClick={handleDelete} className="toolButton" />
