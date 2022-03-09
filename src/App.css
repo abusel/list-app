@@ -516,6 +516,7 @@
   text-align: left;
   word-wrap: break-word;
   display: inline-block;
+  word-break: break-word;
 }
 
 .viewListMiddleContainer {
@@ -525,6 +526,8 @@
   align-items: center;
   word-wrap: break-word;
   margin: 0 0 24px 0;
+  display: inline-block;
+  word-break: break-word;
 }
 
 .viewLineTextContainer {
