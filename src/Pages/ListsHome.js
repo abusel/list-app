@@ -1,7 +1,11 @@
 import ListsHomeHeader from "../Components/listsHomeHeader";
 import ListsContainer from "../Components/listsContainer";
+import { useEffect } from "react";
 
 function ListsHome({ lists, setSelectedListId, setSelectedPage, setLists }) {
+  useEffect(() => {
+    setSelectedListId("");
+  }, []);
   return (
     <div>
       <ListsHomeHeader

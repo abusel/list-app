@@ -11,6 +11,7 @@ function DropDown({
 }) {
   function handleDelete(e) {
     e.stopPropagation();
+    // setSelectedListId("");
     setLists((lists) => {
       return lists.filter((listOne) => listOne.id !== list.id);
     });

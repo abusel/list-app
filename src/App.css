@@ -439,6 +439,12 @@
   fill: #2fe6ff !important;
   cursor: pointer;
 }
+.backButton svg:active path {
+  /* filter: invert(33%) sepia(0%) saturate(6%) hue-rotate(151deg) brightness(86%)
+    contrast(87%); */
+  fill: #2fe6ff !important;
+  cursor: pointer;
+}
 .ellipses svg:active path {
   /* filter: invert(33%) sepia(0%) saturate(6%) hue-rotate(151deg) brightness(86%)
     contrast(87%); */
