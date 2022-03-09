@@ -9,6 +9,7 @@ function ListItem({
   setLists,
 }) {
   const [showDrop, setShowDrop] = useState(false);
+
   return (
     <div
       className={showDrop ? "listItem noClick" : "listItem"}

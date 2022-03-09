@@ -503,7 +503,7 @@
   overflow: hidden;
   resize: none;
   width: 99%;
-  height: 48px;
+  height: 41px;
 }
 
 .listTitleView {
@@ -538,7 +538,7 @@
   line-height: 25px;
   letter-spacing: -0.005em;
   text-align: left;
-  min-height: 48px;
+  min-height: 41px;
 }
 
 /* MEdia query line */

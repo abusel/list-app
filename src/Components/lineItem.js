@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import useLongPress from "./useLongPress";
 
 function LineItem({
@@ -12,6 +12,7 @@ function LineItem({
   reference,
 }) {
   let lines = [{ ...list.lines }];
+  const textReference = useRef();
 
   const onLongPress = (e) => {
     handleCross();
@@ -71,6 +72,11 @@ function LineItem({
   const [checked, setChecked] = useState(line.checked);
   const [crossed, setCrossed] = useState(line.crossed);
   function handleCheck(e) {}
+  function autoGrow(reference) {
+    reference.current.style.height = "41px";
+    reference.current.style.height = reference.current.scrollHeight + "px";
+    console.log(reference.current.scrollHeight);
+  }
   function handleCross(e) {
     setCrossed((crossed) => !crossed);
     setList({
@@ -174,8 +180,11 @@ function LineItem({
         </div>
         {editing ? (
           <textarea
-            ref={reference}
-            rows="2"
+            ref={textReference}
+            onInput={() => {
+              autoGrow(textReference);
+            }}
+            rows="1"
             className={line.crossed ? "lineItemText crossed" : "lineItemText"}
             placeholder="New Item"
             value={line.text}
