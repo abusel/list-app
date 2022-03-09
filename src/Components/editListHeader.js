@@ -10,26 +10,28 @@ function EditListHeader({
   setSelectedListId,
 }) {
   function handleSave() {
-    setLists([
-      ...lists.splice(
-        0,
-        lists.indexOf(
-          lists.find((list) => {
-            return list.id === selectedListId;
-          })
-        )
-      ),
-      { ...list, lines: list.lines.filter((line) => line.text !== "") },
-      ...lists.splice(
-        lists.indexOf(
-          lists.find((list) => {
-            return list.id === selectedListId;
-          })
-        ) + 1
-      ),
-    ]);
-    setSelectedPage("view");
-    !selectedListId && setSelectedListId(list.id);
+    if (list.title.length) {
+      setLists([
+        ...lists.splice(
+          0,
+          lists.indexOf(
+            lists.find((list) => {
+              return list.id === selectedListId;
+            })
+          )
+        ),
+        { ...list, lines: list.lines.filter((line) => line.text !== "") },
+        ...lists.splice(
+          lists.indexOf(
+            lists.find((list) => {
+              return list.id === selectedListId;
+            })
+          ) + 1
+        ),
+      ]);
+      setSelectedPage("view");
+      !selectedListId && setSelectedListId(list.id);
+    }
   }
   return (
     <div className="editList">
