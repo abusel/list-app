@@ -11,7 +11,7 @@ function ListItem({
   const [showDrop, setShowDrop] = useState(false);
   return (
     <div
-      className="listItem"
+      className={showDrop ? "listItem noClick" : "listItem"}
       onClick={() => {
         setSelectedListId(list.id);
         setSelectedPage("view");
