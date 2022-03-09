@@ -26,6 +26,7 @@
 .checkcross:checked {
   border: none;
   background-image: url("./Assets/CheckboxCrossed.svg") !important;
+  filter: opacity(0.3);
 }
 
 * {
@@ -38,6 +39,7 @@
 .crossed {
   text-decoration: line-through;
   color: #242424;
+  opacity: 0.3;
 }
 
 @media (max-width: 1039px) {
@@ -120,6 +122,11 @@
     position: absolute;
     right: 20px;
     transform: translateY(-45px);
+  }
+  .plus {
+    position: absolute;
+    right: 20px;
+    transform: translateY(-40px);
   }
   .listContainer {
     justify-content: center;
@@ -214,7 +221,7 @@
   }
   .ellipses {
     position: absolute;
-    right: 24px;
+    right: 17px;
     /* width: 16.25px; */
     /* height: 3.75px; */
   }
@@ -235,7 +242,7 @@
     caret-color: #2fe6ff;
     resize: none;
     font-family: "Inter", sans-serif;
-    font-size: 20px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 600;
     border-style: none;
@@ -365,6 +372,21 @@
 }
 
 /* Overall */
+/* .editContainer:hover {
+  border: 1px solid red;
+  background-color: #f4f4f4;
+} */
+
+.listItem:hover {
+  background-color: #f4f4f4;
+  filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.08));
+}
+.listItem:active {
+  border: 0.75px solid #ececec;
+  filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.08));
+  background-color: #ffffff;
+}
+
 .createListContainer,
 .viewListContainer {
   width: 100%;
@@ -394,22 +416,46 @@
 
   height: 22px;
 }
-svg:active path {
+.editList svg:active path {
   /* filter: invert(33%) sepia(0%) saturate(6%) hue-rotate(151deg) brightness(86%)
     contrast(87%); */
-  fill: red !important;
+  fill: #2fe6ff !important;
   cursor: pointer;
 }
+/* .filterColor:hover {
+  background-color: #f4f4f4;
+  padding: auto;
+} */
 
 .editList .doneButton {
   /* filter: invert(33%) sepia(0%) saturate(6%) hue-rotate(151deg) brightness(86%)
     contrast(87%); */
   height: 16px;
 }
+.doneButton svg:active path {
+  /* filter: invert(33%) sepia(0%) saturate(6%) hue-rotate(151deg) brightness(86%)
+    contrast(87%); */
+  fill: #2fe6ff !important;
+  cursor: pointer;
+}
+.ellipses svg:active path {
+  /* filter: invert(33%) sepia(0%) saturate(6%) hue-rotate(151deg) brightness(86%)
+    contrast(87%); */
+  fill: #2fe6ff !important;
+  cursor: pointer;
+  border: 1px solid red;
+}
+.delete svg:active path {
+  /* filter: invert(33%) sepia(0%) saturate(6%) hue-rotate(151deg) brightness(86%)
+    contrast(87%); */
+  fill: #2fe6ff !important;
+  cursor: pointer;
+  border: 1px solid red;
+}
 
 .createListItem {
   display: flex;
-  gap: 1%;
+  gap: 16px;
   margin: 5px 0 0 0;
 }
 
@@ -427,6 +473,9 @@ svg:active path {
   appearance: none;
   border: 1px solid #b4b4b4;
   border-radius: 4px;
+}
+.checkbox:hover {
+  background-color: #f4f4f4;
 }
 
 .lineItemText {
@@ -484,6 +533,16 @@ svg:active path {
 
 /* MEdia query line */
 @media (min-width: 1040px) {
+  .plus {
+    position: relative;
+    /* right: 40px; */
+    float: right;
+    margin-right: 30px;
+    transform: translateY(-40px);
+
+    /* width: 16.25px; */
+    /* height: 3.75px; */
+  }
   /* .ellipses-view {
     position: absolute;
     right: 40px;
@@ -631,7 +690,7 @@ svg:active path {
     position: relative;
     /* right: 40px; */
     float: right;
-    margin-right: 24px;
+    margin-right: 17px;
     transform: translateY(-45px);
 
     /* width: 16.25px; */
@@ -657,7 +716,7 @@ svg:active path {
     caret-color: #2fe6ff;
     resize: none;
     font-family: "Inter", sans-serif;
-    font-size: 20px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 600;
     border-style: none;

@@ -33,6 +33,7 @@ function App() {
           setLists={setLists}
           setSelectedPage={setSelectedPage}
           selectedListId={selectedListId}
+          setSelectedListId={setSelectedListId}
         />
       )}
     </div>

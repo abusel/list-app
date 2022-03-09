@@ -1,5 +1,6 @@
 import ListItem from "./listItem";
 import { useEffect } from "react";
+import Plus from "../Assets/Plus.svg";
 
 function ListsContainer({
   lists,
@@ -20,6 +21,19 @@ function ListsContainer({
           />
         );
       })}
+      {lists.length === 0 && (
+        <div
+          className="listItem"
+          onClick={() => {
+            setSelectedPage("create");
+          }}
+        >
+          <div className="listItemWrapper">
+            <p className="listText">Create a list</p>
+            <img src={Plus} className="plus" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

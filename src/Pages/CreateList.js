@@ -3,11 +3,13 @@ import EditListHeader from "../Components/editListHeader";
 import { useState, useEffect, useRef } from "react";
 import uuid from "react-uuid";
 
-function CreateList({ lists, setLists, setSelectedPage, selectedListId }) {
-  useEffect(() => {
-    // console.log(selectedListId);
-    console.log(lists);
-  }, [selectedListId]);
+function CreateList({
+  lists,
+  setLists,
+  setSelectedPage,
+  selectedListId,
+  setSelectedListId,
+}) {
   const [list, setList] = useState(
     lists.find((list) => {
       return list.id === selectedListId;
@@ -32,6 +34,7 @@ function CreateList({ lists, setLists, setSelectedPage, selectedListId }) {
           list={list}
           setSelectedPage={setSelectedPage}
           selectedListId={selectedListId}
+          setSelectedListId={setSelectedListId}
         />
         <textarea
           className="listTitleInput"
