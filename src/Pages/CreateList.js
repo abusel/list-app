@@ -23,7 +23,13 @@ function CreateList({
     setList({ ...list, title: e.target.value });
   }
   const reference = useRef();
+  const titleReference = useRef();
   // reference.current && reference.current.focus();
+  function autoGrow(reference) {
+    reference.current.style.height = "56px";
+    reference.current.style.height = reference.current.scrollHeight + "px";
+    console.log(reference.current.scrollHeight);
+  }
 
   return (
     <div className="createListContainer">
@@ -42,6 +48,10 @@ function CreateList({
           autoFocus={true}
           value={list.title}
           onChange={handleChangeTitle}
+          ref={titleReference}
+          onInput={() => {
+            autoGrow(titleReference);
+          }}
         ></textarea>
         <LineContainer
           lines={list.lines}
