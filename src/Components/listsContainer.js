@@ -1,5 +1,5 @@
 import ListItem from "./listItem";
-import { useEffect } from "react";
+
 import Plus from "../Assets/Plus.svg";
 
 function ListsContainer({
@@ -7,17 +7,24 @@ function ListsContainer({
   setSelectedListId,
   setSelectedPage,
   setLists,
+  hover,
+  clicked,
+  setHover,
 }) {
   return (
     <div className="listContainer">
       {lists.map((list) => {
         return (
           <ListItem
+            key={list.id}
             list={list}
             setSelectedListId={setSelectedListId}
             setSelectedPage={setSelectedPage}
             lists={lists}
             setLists={setLists}
+            hover={hover}
+            setHover={setHover}
+            clicked={clicked}
           />
         );
       })}

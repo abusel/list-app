@@ -1,11 +1,25 @@
 import ListsHomeHeader from "../Components/listsHomeHeader";
 import ListsContainer from "../Components/listsContainer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-function ListsHome({ lists, setSelectedListId, setSelectedPage, setLists }) {
+function ListsHome({
+  lists,
+  setSelectedListId,
+  setSelectedPage,
+  setLists,
+  clicked,
+}) {
+  const [hover, setHover] = useState(false);
   useEffect(() => {
     setSelectedListId("");
   }, []);
+  useEffect(() => {
+    setHover(false);
+  }, [lists]);
+  useEffect(() => {
+    setHover(false);
+  }, [clicked]);
+
   return (
     <div>
       <ListsHomeHeader
@@ -17,6 +31,9 @@ function ListsHome({ lists, setSelectedListId, setSelectedPage, setLists }) {
         setSelectedListId={setSelectedListId}
         setSelectedPage={setSelectedPage}
         setLists={setLists}
+        hover={hover}
+        setHover={setHover}
+        clicked={clicked}
       />
     </div>
   );

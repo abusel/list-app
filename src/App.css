@@ -8,7 +8,6 @@
 
 .App-logo {
   height: 40vmin;
-  pointer-events: none;
 }
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
@@ -75,9 +74,9 @@
     top: 40px;
     border-radius: 4px;
     /* padding-right: 8.25px; */
-    padding-top: 8.25px;
+    /* padding-top: 8.25px;
     padding-bottom: 8px;
-    padding-left: 8px;
+    padding-left: 8px; */
   }
 
   .listHeaderText {
@@ -231,9 +230,10 @@
     border-radius: 8px;
     z-index: 4;
     position: absolute;
-    right: 40px;
+    right: 20px;
     top: 53.5px;
-    width: 123px;
+    display: flex;
+    flex-direction: column;
     background-color: #ffffff;
   }
 
@@ -376,17 +376,24 @@
   border: 1px solid red;
   background-color: #f4f4f4;
 } */
-/* 
+.listItem {
+  z-index: 1 !important;
+  position: relative;
+}
 .listItem:hover {
   background-color: #f4f4f4;
   filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.08));
-  pointer-events: none;
-} */
-/* .listItem:active {
+  pointer-events: initial;
+}
+.listItem:active {
   border: 0.75px solid #ececec;
   filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.08));
   background-color: #ffffff;
-} */
+}
+
+.viewDrop {
+  top: 74.5px !important;
+}
 
 .createListContainer,
 .viewListContainer {
@@ -421,6 +428,12 @@
   /* filter: invert(33%) sepia(0%) saturate(6%) hue-rotate(151deg) brightness(86%)
     contrast(87%); */
   fill: #2fe6ff !important;
+}
+
+.editList svg:hover path {
+  /* filter: invert(33%) sepia(0%) saturate(6%) hue-rotate(151deg) brightness(86%)
+    contrast(87%); */
+  fill: #242424;
   cursor: pointer;
 }
 /* .filterColor:hover {
@@ -459,9 +472,61 @@
   cursor: pointer;
   border: 1px solid red;
 }
-/* .noClick{
-  z-index: -1 !;
+/* .createImage:active path {
+  fill: #2fe6ff;
 } */
+
+.createImage:active > .pencil {
+  fill: #2fe6ff !important;
+}
+
+.createImage:hover > .backgroundCreate {
+  fill: #f4f4f4 !important;
+}
+
+.ellipses-view:hover > .ellipsesBackground {
+  fill: #f4f4f4 !important;
+}
+
+.ellipses-view:active > .ellipsesDots path {
+  fill: #2fe6ff !important;
+}
+.ellipses:active > .ellipsesDots path {
+  fill: #2fe6ff !important;
+}
+.ellipses:hover > .ellipsesBackground {
+  fill: #f4f4f4 !important;
+}
+
+.editButton:hover > .editBackground {
+  fill: #f4f4f4 !important;
+}
+.editButton:active > .editText {
+  fill: #2fe6ff !important;
+}
+
+.delete:hover > .deleteBackground {
+  fill: #f4f4f4 !important;
+}
+.delete:active > .deleteIcon path {
+  fill: #ff3333 !important;
+}
+.delete:active > .deleteText {
+  fill: #ff3333 !important;
+}
+
+.backButton:hover > .backButtonContent {
+  fill: #242424;
+}
+.backButton:active > .backButtonContent {
+  fill: #2fe6ff !important;
+}
+/* ellipsesBackground
+ellipsesDots */
+
+.noClick {
+  pointer-events: none;
+}
 
 .createListItem {
   display: flex;
@@ -559,6 +624,10 @@
     /* width: 16.25px; */
     /* height: 3.75px; */
   }
+  .viewDrop {
+    right: 60px !important;
+  }
+
   /* .ellipses-view {
     position: absolute;
     right: 40px;
@@ -643,7 +712,6 @@
     /* border: 1px solid red; */
     float: right;
     border-radius: 4px;
-    padding: 8px;
   }
   .avatar {
     border-radius: 50%;
@@ -700,7 +768,7 @@
   }
 
   .toolButton {
-    height: 50px;
+    /* margin-left: -4.9px; */
   }
   .ellipses {
     position: relative;
@@ -712,6 +780,10 @@
     /* width: 16.25px; */
     /* height: 3.75px; */
   }
+
+  .selectedLine {
+    pointer-events: all !important;
+  }
   .listItemWrapper {
     width: 100%;
   }
@@ -719,12 +791,15 @@
   .dropDown {
     border: 0.75px solid #ececec;
     border-radius: 8px;
-    z-index: 4 !important;
+    z-index: 10 !important;
     position: absolute;
-    right: 40px;
+    right: 20px;
     top: 53.5px;
-    width: 123px;
     background-color: #ffffff;
+    display: flex;
+
+    flex-direction: column;
+    pointer-events: all;
   }
 
   /* Create/edit List */

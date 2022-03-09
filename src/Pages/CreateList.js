@@ -28,7 +28,6 @@ function CreateList({
   function autoGrow(reference) {
     reference.current.style.height = "56px";
     reference.current.style.height = reference.current.scrollHeight + "px";
-    console.log(reference.current.scrollHeight);
   }
 
   return (

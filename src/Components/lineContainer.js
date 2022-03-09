@@ -38,9 +38,10 @@ function LineContainer({
 
   return (
     <>
-      {lines.map((line) => {
+      {lines.map((line, index) => {
         return (
           <LineItem
+            key={index}
             line={line}
             setList={setList}
             list={list}

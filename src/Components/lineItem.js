@@ -75,7 +75,6 @@ function LineItem({
   function autoGrow(reference) {
     reference.current.style.height = "41px";
     reference.current.style.height = reference.current.scrollHeight + "px";
-    console.log(reference.current.scrollHeight);
   }
   function handleCross(e) {
     setCrossed((crossed) => !crossed);
@@ -132,7 +131,7 @@ function LineItem({
             }
             type="checkbox"
             checked={line.checked}
-            tabindex="-1"
+            tabIndex="-1"
             onChange={(e) => {
               setList({
                 ...list,

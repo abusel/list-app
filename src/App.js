@@ -8,14 +8,21 @@ function App() {
   const [lists, setLists] = useState([]);
   const [selectedListId, setSelectedListId] = useState("");
   const [selectedPage, setSelectedPage] = useState("home");
+  const [homeClicked, setHomeClicked] = useState(false);
   return (
-    <div className="App">
+    <div
+      className="App"
+      onClick={() => {
+        setHomeClicked((homeClicked) => !homeClicked);
+      }}
+    >
       {selectedPage === "home" && (
         <ListsHome
           lists={lists}
           setLists={setLists}
           setSelectedListId={setSelectedListId}
           setSelectedPage={setSelectedPage}
+          clicked={homeClicked}
         />
       )}
       {selectedPage === "view" && (
@@ -25,6 +32,7 @@ function App() {
           selectedListId={selectedListId}
           setSelectedPage={setSelectedPage}
           setSelectedPage={setSelectedPage}
+          clicked={homeClicked}
         />
       )}
       {selectedPage === "create" && (
