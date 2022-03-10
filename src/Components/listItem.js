@@ -13,7 +13,6 @@ function ListItem({
   const [showDrop, setShowDrop] = useState(false);
   useEffect(() => {
     setShowDrop(false);
-    console.log(hover);
   }, [clicked]);
   // useEffect(() => {
   //   console.log(hover);
