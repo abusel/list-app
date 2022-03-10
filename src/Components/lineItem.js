@@ -17,6 +17,9 @@ function LineItem({
   const onLongPress = (e) => {
     handleCross();
   };
+  useEffect(() => {
+    textReference.current && autoGrow(textReference);
+  }, []);
 
   const onClick = () => {
     setChecked((checked) => !checked);
