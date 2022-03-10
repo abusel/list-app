@@ -71,7 +71,7 @@
     /* border: 1px solid red; */
     position: absolute;
     right: 25px;
-    top: 40px;
+    top: 50px;
     border-radius: 4px;
     /* padding-right: 8.25px; */
     /* padding-top: 8.25px;
@@ -707,7 +707,7 @@ ellipsesDots */
   .createImage {
     right: 40px;
     margin-left: 500px;
-    margin-top: 20px;
+    margin-top: 25px;
     margin-bottom: 24px;
     /* border: 1px solid red; */
     float: right;
