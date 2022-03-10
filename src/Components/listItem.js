@@ -13,7 +13,11 @@ function ListItem({
   const [showDrop, setShowDrop] = useState(false);
   useEffect(() => {
     setShowDrop(false);
+    console.log(hover);
   }, [clicked]);
+  // useEffect(() => {
+  //   console.log(hover);
+  // }, [hover]);
 
   return (
     <>
@@ -50,8 +54,8 @@ function ListItem({
             className={showDrop ? "selectedLine ellipses" : "ellipses"}
             onClick={(e) => {
               e.stopPropagation();
-              setShowDrop((showDrop) => !showDrop);
               setHover((hover) => !hover);
+              setShowDrop((showDrop) => !showDrop);
             }}
           >
             <path
