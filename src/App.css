@@ -79,6 +79,9 @@
     padding-bottom: 8px;
     padding-left: 8px; */
   }
+  .viewDrop {
+    right: 20px !important;
+  }
 
   .listHeaderText {
     font-family: "Inter", sans-serif;
@@ -182,7 +185,7 @@
   }
 
   .dropDown {
-    border: 0.75px solid #ececec;
+    /* border: 0.75px solid #ececec;
     border-radius: 8px;
     z-index: 4;
     position: absolute;
@@ -190,7 +193,21 @@
     top: 53.5px;
     display: flex;
     flex-direction: column;
+    background-color: #ffffff; */
+
+    border: 0.75px solid #ececec;
+    border-radius: 8px;
+    z-index: 4;
+    position: relative;
+    right: -86px;
+    top: -27.5px;
+    display: flex;
+    flex-direction: column;
     background-color: #ffffff;
+  }
+
+  .moveUp {
+    top: -109.5px;
   }
 
   /* Create/edit List */
@@ -237,6 +254,7 @@
 
 .viewDrop {
   top: 74.5px !important;
+  position: absolute !important;
 }
 
 .createListContainer,
@@ -366,6 +384,7 @@
 
 .noClick {
   pointer-events: none;
+  /* top: -100px; */
 }
 
 .createListItem {
@@ -634,17 +653,26 @@
     border: 0.75px solid #ececec;
     border-radius: 8px;
     z-index: 10 !important;
-    position: absolute;
+    /* position: absolute;
     right: 20px;
-    top: 53.5px;
-    /* position: relative;
+    top: 53.5px; */
+    position: relative;
     right: -393px;
-    top: -25.5px; */
+    top: -25.5px;
     background-color: #ffffff;
     display: flex;
 
     flex-direction: column;
     pointer-events: all;
+  }
+  .viewDrop {
+    position: absolute !important;
+    /* position: relative;
+    right: -393px;
+    top: -25.5px; */
+  }
+  .moveUp {
+    top: -109.5px;
   }
 
   /* Create/edit List */

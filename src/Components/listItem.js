@@ -14,16 +14,29 @@ function ListItem({
   useEffect(() => {
     setShowDrop(false);
   }, [clicked]);
+
   // useEffect(() => {
   //   console.log(hover);
   // }, [hover]);
 
-  // function
+  function listItemClass() {
+    let className = "listItem";
+    if (hover && !showDrop) {
+      className += " noClick";
+    }
+    if (hover < lists.indexOf(list) + 1) {
+      className += " moveUp";
+    }
+    if (!hover) {
+      className = "listItem";
+    }
+    return className;
+  }
 
   return (
     <>
       <div
-        className={hover && !showDrop ? "listItem noClick" : "listItem"}
+        className={listItemClass()}
         onClick={() => {
           setSelectedListId(list.id);
           setSelectedPage("view");
@@ -35,7 +48,7 @@ function ListItem({
               ? list.title.substring(0, 23) + "..."
               : list.title}
           </p>
-          {showDrop && (
+          {/* {showDrop && (
             <DropDown
               setSelectedPage={setSelectedPage}
               setSelectedListId={setSelectedListId}
@@ -44,7 +57,7 @@ function ListItem({
               setLists={setLists}
               setShowDrop={setShowDrop}
             />
-          )}
+          )} */}
 
           <svg
             width="32"
@@ -56,6 +69,11 @@ function ListItem({
             onClick={(e) => {
               e.stopPropagation();
               setHover((hover) => !hover);
+              if (hover) {
+                setHover(false);
+              } else {
+                setHover(lists.indexOf(list) + 1);
+              }
               setShowDrop((showDrop) => !showDrop);
             }}
           >
@@ -83,7 +101,7 @@ function ListItem({
           </svg>
         </div>
       </div>
-      {/* {showDrop && (
+      {showDrop && (
         <DropDown
           setSelectedPage={setSelectedPage}
           setSelectedListId={setSelectedListId}
@@ -92,7 +110,7 @@ function ListItem({
           setLists={setLists}
           setShowDrop={setShowDrop}
         />
-      )} */}
+      )}
     </>
   );
 }
