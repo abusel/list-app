@@ -215,9 +215,6 @@
     align-items: center;
   }
 
-  .toolButton {
-    height: 50px;
-  }
   .ellipses {
     position: absolute;
     right: 17px;
@@ -766,9 +763,6 @@ ellipsesDots */
     align-items: center;
   }
 
-  .toolButton {
-    /* margin-left: -4.9px; */
-  }
   .ellipses {
     position: relative;
     /* right: 40px; */
