@@ -241,11 +241,11 @@
   z-index: 1 !important;
   position: relative;
 }
-.listItem:hover {
+/* .listItem:hover {
   background-color: #f4f4f4;
   filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.08));
   pointer-events: initial;
-}
+} */
 .listItem:active {
   border: 0.75px solid #ececec;
   filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.08));
@@ -354,9 +354,9 @@
 .ellipses:active > .ellipsesDots path {
   fill: #2fe6ff !important;
 }
-.ellipses:hover > .ellipsesBackground {
+/* .ellipses:hover > .ellipsesBackground {
   fill: #f4f4f4 !important;
-}
+} */
 
 .editButton:hover > .editBackground {
   fill: #f4f4f4 !important;
@@ -487,6 +487,14 @@
     right: 60px !important;
   }
 
+  .listItem:hover {
+    background-color: #f4f4f4;
+    filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.08));
+    pointer-events: initial;
+  }
+  .ellipses:hover > .ellipsesBackground {
+    fill: #f4f4f4 !important;
+  }
   /* .ellipses-view {
     position: absolute;
     right: 40px;
