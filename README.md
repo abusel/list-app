@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# List app created to specifications given from a Figma File.
+Front End Only App that is hosted at https://list-app-fe.herokuapp.com/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
